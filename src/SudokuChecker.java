@@ -63,12 +63,12 @@ public class SudokuChecker {
     public static boolean validator(int[][] rows) {
         boolean[] found = new boolean[9];
 
-        for (int i = 0; i < rows.length; i++) {
+        for (int[] row : rows) {
             for (int j = 0; j < 9; j++) {
-                if (found[rows[i][j] - 1]) {
+                if (found[row[j] - 1]) {
                     return false;
                 }
-                found[rows[i][j] - 1] = true;
+                found[row[j] - 1] = true;
             }
             found = new boolean[9];
         }
